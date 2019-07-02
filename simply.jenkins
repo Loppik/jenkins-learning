@@ -11,7 +11,7 @@ pipeline {
         echo "============= copy files ============="
       }
     }
-    stage('reload server) {
+    stage('reload server') {
       steps {
         echo "============= reload server ============="
       }
