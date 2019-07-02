@@ -1,1 +1,20 @@
-
+pipeline {
+  triggers { pollSCM('* * * * *') }
+  stages {
+    stage('connect to remote server') {
+      steps {
+        echo "============= connect to remote server ============="
+      }
+    }
+    stage('copy files') {
+      steps {
+        echo "============= copy files ============="
+      }
+    }
+    stage('reload server) {
+      steps {
+        echo "============= reload server ============="
+      }
+    }
+  }
+}
