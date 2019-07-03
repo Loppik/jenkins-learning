@@ -7,7 +7,7 @@ pipeline {
     stage('connect to remote server') {
       steps {
         echo "============= connect to remote server ============="
-        sh 'ssh -tt root@192.168.1.9'
+        sh 'ssh -T root@192.168.1.9'
         sh 'whoami'
       }
     }
