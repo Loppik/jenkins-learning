@@ -13,7 +13,7 @@ pipeline {
     stage('copy files') {
       steps {
         echo "============= copy files ============="
-        sh 'ssh root@192.168.1.9 git pull origin dev'
+        sh 'ssh root@192.168.1.9 git pull origin dev '
       }
     }
     stage('reload server') {
