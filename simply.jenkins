@@ -1,4 +1,4 @@
-def com1 = "cd /home/katrin/Projects/just_one_html && pwd"
+def com1 = ""
 pipeline {
   agent {
     label 'master'
@@ -14,7 +14,7 @@ pipeline {
       steps {
         echo "============= copy files ============="
         sh '''
-          ssh root@192.168.1.9 "whoami && whoami"
+          ssh root@192.168.1.9 "cd /home/katrin/Projects/just_one_html && touch me"
         '''
       }
     }
