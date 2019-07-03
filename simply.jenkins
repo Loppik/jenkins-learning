@@ -7,21 +7,21 @@ pipeline {
     stage('connect to remote server') {
       steps {
         echo "============= connect to remote server ============="
-        sh 'ssh -T root@192.168.1.9 whoami'
+        sh 'ssh root@192.168.1.9 whoami'
       }
     }
     stage('copy files') {
       steps {
         echo "============= copy files ============="
-        sh 'cd /home/katrin/Projects/just_one_html'
-        sh 'git remote add origin git@github.com:Loppik/english-coup-client.git'
-        sh 'git origin pull'
+        sh 'ssh root@192.168.1.9 cd /home/katrin/Projects/just_one_html'
+        sh 'ssh root@192.168.1.9 git remote add origin git@github.com:Loppik/english-coup-client.git'
+        sh 'ssh root@192.168.1.9 git origin pull'
       }
     }
     stage('reload server') {
       steps {
         echo "============= reload server ============="
-        sh 'service nginx reload'
+        sh 'ssh root@192.168.1.9 service nginx reload'
       }
     }
   }
