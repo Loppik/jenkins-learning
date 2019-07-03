@@ -8,6 +8,8 @@ pipeline {
     stage('connect to remote server') {
       steps {
         echo "============= connect to remote server ============="
+        sh 'pwd'
+        sh 'ls'
       }
     }
     stage('copy files') {
