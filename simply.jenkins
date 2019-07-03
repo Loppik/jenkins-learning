@@ -14,8 +14,7 @@ pipeline {
       steps {
         echo "============= copy files ============="
         sh '''
-          ssh -T root@192.168.1.9
-          whoami
+          ssh root@192.168.1.9 "whoami && whoami"
         '''
       }
     }
