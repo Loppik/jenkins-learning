@@ -13,7 +13,16 @@ pipeline {
     stage('copy files') {
       steps {
         echo "============= copy files ============="
-        sh 'ssh root@192.168.1.9 git pull origin dev '
+        ssh otherhost << EOF
+          ls some_folder; 
+          ./someaction.sh 'some params'
+          pwd
+          ./some_other_action 'other params'
+        EOF
+        sh 'ssh root@192.168.1.9 << EOF
+          cd /home/katrin/Projects/just_one_html
+          touch me
+        EOF'
       }
     }
     stage('reload server') {
