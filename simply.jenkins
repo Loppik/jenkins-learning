@@ -13,9 +13,10 @@ pipeline {
     stage('copy files') {
       steps {
         echo "============= copy files ============="
-        dir('/home/katrin/Projects/just_one_html') {
-          sh 'ssh root@192.168.1.9 pwd'
-        }
+        sh 'ssh root@192.168.1.9 \'
+          pwd
+          pwd
+        \''
       }
     }
     stage('reload server') {
