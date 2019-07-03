@@ -14,15 +14,15 @@ pipeline {
     stage('copy files') {
       steps {
         echo "============= copy files ============="
-        cd /home/katrin/Projects/just_one_html
-        git remote add origin 'git@github.com:Loppik/english-coup-client.git'
-        git origin pull
+        sh 'cd /home/katrin/Projects/just_one_html'
+        sh 'git remote add origin git@github.com:Loppik/english-coup-client.git'
+        sh 'git origin pull'
       }
     }
     stage('reload server') {
       steps {
         echo "============= reload server ============="
-        service nginx reload
+        sh 'service nginx reload'
       }
     }
   }
