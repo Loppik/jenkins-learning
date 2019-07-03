@@ -8,13 +8,15 @@ pipeline {
     stage('connect to remote server') {
       steps {
         echo "============= connect to remote server ============="
-        sh 'ssh root@192.168.1.9 whoami'
       }
     }
     stage('copy files') {
       steps {
         echo "============= copy files ============="
-        sh 'ssh root@192.168.1.9 ${com1}'
+        sh '''
+          ssh root@192.168.1.9
+          whoami
+        '''
       }
     }
     stage('reload server') {
